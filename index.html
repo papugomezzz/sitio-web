@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fluttershy · Panadería y Repostería</title>
+  <meta name="description" content="Fluttershy, un rinconcito pastel de panadería y repostería. Delicias dulces, recetas caseras y mucho cariño." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Brillos flotantes generados por JS -->
+  <div id="sparkles" aria-hidden="true"></div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <nav class="nav container">
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar a modo oscuro">
+        <span class="icon-sol" aria-hidden="true">☀️</span>
+        <span class="icon-luna" aria-hidden="true">🌙</span>
+      </button>
+
+      <a href="#inicio" class="logo">
+        <span class="logo-pony" aria-hidden="true">
+          <img src="img/fluttershy-cutout.png" alt="Fluttershy" />
+        </span>
+        <span class="logo-text">Fluttershy</span>
+        <span class="logo-badge">✨</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#recetas">Recetas</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <button class="cart-link" id="cartOpen" aria-label="Abrir tu cesta">
+        <span class="cart-icon">🧺</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section id="inicio" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">✦ panadería &amp; repostería ✦</p>
+          <h1 class="site-name big">Fluttershy</h1>
+          <p class="hero-sub">
+            Un rinconcito pastel lleno de <strong>cariño</strong>, donde el verde agua,
+            el rosa y el amarillo se mezclan con el olor a pan recién horneado.
+          </p>
+          <div class="hero-actions">
+            <a href="#productos" class="btn btn-primary">Ver dulces 🧁</a>
+            <a href="#recetas" class="btn btn-ghost">Recetas caseras</a>
+          </div>
+        </div>
+        <div class="hero-pony">
+          <img src="img/fluttershy-cutout.png" alt="Fluttershy" />
+          <span class="bubble bubble-1">🧁</span>
+          <span class="bubble bubble-2">🍓</span>
+          <span class="bubble bubble-3">🥐</span>
+        </div>
+        <p class="hero-caption"><span class="caption-heart">❤️</span> si Fluttershy pudo, por qué vos no?</p>
+      </div>
+    </section>
+
+    <!-- ===================== MARQUESINA ===================== -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>✨ cupcakes de fresa</span><span>✦ pan artesanal</span>
+        <span>✨ donas glaseadas</span><span>✦ galletas caseras</span>
+        <span>✨ croissants de mantequilla</span><span>✦ pastel de zanahoria</span>
+        <span>✨ muffins de arándanos</span><span>✦ pan de plátano</span>
+        <span>✨ cupcakes de fresa</span><span>✦ pan artesanal</span>
+        <span>✨ donas glaseadas</span><span>✦ galletas caseras</span>
+        <span>✨ croissants de mantequilla</span><span>✦ pastel de zanahoria</span>
+        <span>✨ muffins de arándanos</span><span>✦ pan de plátano</span>
+      </div>
+    </div>
+
+    <!-- ===================== PRODUCTOS ===================== -->
+    <section id="productos" class="section">
+      <div class="container">
+        <h2 class="section-title">Nuestros <span class="accent">dulces</span></h2>
+        <p class="section-sub">Hechos con mantequilla, paciencia y una pizca de magia.</p>
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== RECETAS ===================== -->
+    <section id="recetas" class="section section-tint">
+      <div class="container">
+        <h2 class="section-title">Recetas <span class="accent">caseras</span></h2>
+        <p class="section-sub">Los secretitos que Fluttershy comparte contigo 🦋</p>
+        <div class="recipe-tabs" role="tablist" aria-label="Categorías de recetas">
+          <button class="recipe-tab active" data-cat="dulce" role="tab" aria-selected="true">Dulces 🍰</button>
+          <button class="recipe-tab" data-cat="salada" role="tab" aria-selected="false">Saladas 🥪</button>
+        </div>
+        <div class="recipe-grid" id="recipeGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== NOSOTROS ===================== -->
+    <section id="nosotros" class="section">
+      <div class="container about-grid">
+        <div class="about-card">
+          <span class="about-emoji">🦋</span>
+          <h3>Pan artesanal</h3>
+          <p>Amasamos a mano cada mañana, con harinas de calidad y mucho cariño.</p>
+        </div>
+        <div class="about-card">
+          <span class="about-emoji">🍰</span>
+          <h3>Repostería fina</h3>
+          <p>Pasteles, cupcakes y postres para tus momentos más dulces.</p>
+        </div>
+        <div class="about-card">
+          <span class="about-emoji">💖</span>
+          <h3>Hecho con amor</h3>
+          <p>Cada receta nace de un sentimiento. Porque lo casero se nota.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER / CONTACTO ===================== -->
+  <footer id="contacto" class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#inicio" class="logo logo-footer">
+          <span class="logo-pony" aria-hidden="true"><img src="img/fluttershy.jpg" alt="Mini Fluttershy" /></span>
+          <span class="logo-text">Fluttershy</span>
+        </a>
+        <p>Panadería y repostería artesanal. Hecha con cariño, para vos. ✨</p>
+      </div>
+      <div class="footer-col">
+        <h4>Horarios</h4>
+        <ul>
+          <li>Lun a Vie · 7:00 – 20:00</li>
+          <li>Sábado · 8:00 – 21:00</li>
+          <li>Domingo · 8:00 – 14:00</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visitanos</h4>
+        <ul>
+          <li>📍 Calle del Azúcar 42</li>
+          <li>📞 555-0123-4567</li>
+          <li>✉️ hola@fluttershy.pan</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Fluttershy · hecho con 🧁 y mucho rosa pastel</p>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- ===================== MODAL CESTA ===================== -->
+  <div class="modal-overlay" id="cartModal">
+    <div class="cart-modal" role="dialog" aria-modal="true" aria-labelledby="cartModalTitle">
+      <button class="modal-close" id="cartClose" aria-label="Cerrar cesta">×</button>
+      <h2 class="cart-modal-title" id="cartModalTitle">Tu cesta 🧺</h2>
+      <div class="cart-layout">
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-total-box">
+          <h3>Total</h3>
+          <p class="cart-total-amount" id="cartTotal">$0</p>
+          <p class="cart-total-items" id="cartTotalItems">0 productos</p>
+          <button class="btn btn-primary btn-checkout" id="cartCheckout">Completar pedido 💖</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
